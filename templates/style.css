@@ -1,0 +1,25 @@
+#title-bar nav ul {
+    list-style: none; /* リストのデフォルトのマーカーを削除 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* 項目を中央揃え */
+    gap: 20px; /* 項目間の余白を設定 */
+}
+
+#title-bar nav ul li {
+    display: inline;
+}
+
+#title-bar nav ul li a {
+    color: white; /* テキスト色を白に */
+    text-decoration: none; /* 下線を削除 */
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s; /* ホバー時のアニメーション */
+}
+
+#title-bar nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* ホバー時の背景色 */
+    border-radius: 5px; /* なめらかな角丸を追加 */
+}
