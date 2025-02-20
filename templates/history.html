@@ -3,10 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{.Title}}</title>
+    <title>History</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+                /* ヘッダーのスタイル */
+                header {
+            position: relative;
+            width: 100%;
+            height: 300px; /* ヘッダーの高さ */
+            background-image: url('Thelaat.png'); /* 背景画像を設定 */
+            background-size: cover; /* 画像をカバーするように調整 */
+            background-position: center; /* 画像を中央に配置 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        /* 半透明の文字を重ねるための擬似要素 */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景 */
+        }
+
+        /* ヘッダー内のテキスト */
+        header h1 {
+            position: relative;
+            z-index: 1; /* 擬似要素の上に表示 */
+        }
+        /* タイトルバーのスタイル */
+        #title-bar {
+            position: fixed;
+            top: -100vh; /* 最初は画面外に隠れるように */
+            left: 0;
+            width: 100%;
+            height: 100vh; /* タイトルバーが画面全体の高さを占める */
+            background-color: rgba(0, 0, 0, 0.8); /* 半透明の背景 */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 40px;
+            transition: top 0.3s ease-in-out; /* アニメーションを追加 */
+            z-index: 1000; /* 他の要素の上に表示 */
+        }
+
+        /* ナビゲーションメニューのスタイル */
+        #title-bar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #title-bar nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        #title-bar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        /* セクションのスタイル */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* 履歴のスタイル */
+        .history-item {
+            position: relative;
+            padding-left: 40px; /* 左側にスペースを確保 */
+            margin-bottom: 30px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 丸と棒のデザイン */
+        .history-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px; /* 丸の直径 */
+            height: 20px; /* 丸の直径 */
+            background-color: #000; /* 丸の色 */
+            border-radius: 50%; /* 丸にする */
+            transform: translateX(-50%); /* 中央に配置 */
+        }
+
+        .history-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20px; /* 丸の下から開始 */
+            width: 2px; /* 棒の太さ */
+            height: calc(100% + 10px); /* 棒の長さ */
+            background-color: #000; /* 棒の色 */
+            transform: translateX(-50%); /* 中央に配置 */
+        }
+
+        /* 最後の履歴項目の棒を非表示にする */
+        .history-item:last-child::after {
+            display: none;
+        }
+        nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+    </style>
 </head>
 <body>
-    <h1>History</h1>
-    <p>ここに「History」の内容を記述します。</p>
+    <header>
+        <h1>Shuei's Portfolio</h1>
+    </header>
+    <!-- タイトルバー -->
+    <div id="title-bar">
+        <nav>
+            <ul>
+                <li><a href="/about-me">About me</a></li>
+                <li><a href="/history">History</a></li>
+                <li><a href="/skills">Skills</a></li>
+                <li><a href="/products">Product</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Historyセクション -->
+    <section id="history">
+        <h1>History</h1>
+        <div class="history-item">
+            <p>2023年4月 大阪公立大学高等専門学校に入学</p>
+        </div>
+        <div class="history-item">
+            <p>2024年4月 知能情報コースに進学, PythonとArduinoの学習を始める．</p>
+        </div>
+        <div class="history-item">
+            <p>2024年8月 エレキベースを始めるとともに現代音楽部へ入部</p>
+        </div>
+        <div class="history-item">
+            <p>2025年1月 Goの学習を始める</p>
+        </div>
+    </section>
+
+    <script>
+        // タイトルバーの要素を取得
+        const titleBar = document.getElementById("title-bar");
+
+        // ウィンドウの高さを取得してカーソル位置を判定
+        window.addEventListener("mousemove", function(e) {
+            const windowHeight = window.innerHeight; // 画面の高さを取得
+            const cursorY = e.clientY; // カーソルのY座標を取得
+
+            if (cursorY <= 100) { 
+                // カーソルが画面上部100px以内の場合
+                titleBar.style.top = "0"; // タイトルバーを表示
+            } else if (cursorY >= windowHeight - 100) { 
+                // カーソルが画面下部100px以内の場合
+                titleBar.style.top = "-100vh"; // タイトルバーを隠す
+            }
+        });
+    </script>
 </body>
 </html>

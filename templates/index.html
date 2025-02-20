@@ -22,34 +22,34 @@
 
         /* タイトルバーのスタイル */
         #title-bar {
-            position: absolute;
-            top: -100vh; /* 最初は画面外に隠れるように */
-            left: 0;
-            width: 100%;
-            height: 100vh; /* タイトルバーが画面全体の高さを占める */
-            background-color: rgba(0, 0, 0, 0.8); /* 半透明の背景 */
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 40px;
-            transition: top 0.3s ease-in-out; /* アニメーションを追加 */
-        }
+        position: absolute;
+        top: -100vh; /* 最初は画面外に隠れるように */
+        left: 0;
+        width: 100%;
+        height: 100vh; /* タイトルバーが画面全体の高さを占める */
+        background-color: rgba(0, 0, 0, 0.8); /* 半透明の背景 */
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 40px;
+        transition: top 0.3s ease-in-out; /* アニメーションを追加 */
+    }
 
-        .container {
+        /*.container {
             position: relative;
             width: 100%;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            /*display: flex;
+            /*justify-content: center;
+            /*align-items: center;
         }
 
-        .text-overlay {
+        /*.text-overlay {
             background-color: rgba(0, 0, 0, 0.5);
             padding: 10px 20px;
             border-radius: 5px;
             font-size: 24px;
-        }
+        }*/
     </style>
 </head>
 <body>
@@ -58,17 +58,15 @@
     <div id="title-bar">{{.Title}}
             <nav>
                 <ul>
-                    <li><a href="templates\about-me.html">About me</a></li>
-                    <li><a href="templates\history.html">History</a></li>
-                    <li><a href="templates\products.html">Product</a></li>
-                    <li><a href="templates\contact.html">Contact</a></li>
+                    <li><a href="/about-me">About me</a></li>
+                    <li><a href="/history">History</a></li>
+                    <li><a href="/skills">Skills</a></li>
+                    <li><a href="/products">Product</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
     </div>
 
-    <div class="container">
-        <div class="text-overlay">{{.Title}}</div>
-    </div>
     
     <script>
         // タイトルバーの要素を取得

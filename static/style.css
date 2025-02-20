@@ -1,0 +1,74 @@
+#title-bar nav ul {
+    list-style: none; /* リストのデフォルトのマーカーを削除 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* 項目を中央揃え */
+    gap: 20px; /* 項目間の余白を設定 */
+}
+
+#title-bar nav ul li {
+    display: inline;
+}
+
+#title-bar nav ul li a {
+    color: white; /* テキスト色を白に */
+    text-decoration: none; /* 下線を削除 */
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s; /* ホバー時のアニメーション */
+}
+
+#title-bar nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* ホバー時の背景色 */
+    border-radius: 5px; /* なめらかな角丸を追加 */
+}
+
+/* 画像のスタイル */
+img {
+    max-width: 100%; /* 最大幅を100%に設定 */
+    height: auto; /* 高さを自動調整 */
+    border: 2px solid #ccc; /* 枠線の追加 */
+    border-radius: 8px; /* 角を丸くする */
+    display: block; /* ブロック要素化 */
+    margin: 0 auto; /* 中央揃え */
+}
+
+/* 動画のスタイル */
+video {
+    max-width: 100%; /* 最大幅を100%に設定 */
+    height: auto; /* 高さを自動調整 */
+    border: 2px solid #ccc; /* 枠線の追加 */
+    border-radius: 8px; /* 角を丸くする */
+    display: block; /* ブロック要素化 */
+    margin: 0 auto; /* 中央揃え */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}

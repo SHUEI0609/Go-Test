@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <style>
+        header {
+            position: relative;
+            width: 100%;
+            height: 300px; /* ヘッダーの高さ */
+            background-image: url('Thelaat.png'); /* 背景画像を設定 */
+            background-size: cover; /* 画像をカバーするように調整 */
+            background-position: center; /* 画像を中央に配置 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        /* 半透明の文字を重ねるための擬似要素 */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景 */
+        }
+
+        /* ヘッダー内のテキスト */
+        header h1 {
+            position: relative;
+            z-index: 1; /* 擬似要素の上に表示 */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            margin-bottom: 10px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>   
+    <header>
+        <h1>Shuei's Portfolio</h1>
+    </header> 
+    <h1>skills</h1>
+    <p>ここに「skills」の内容を記述します。</p>
+</body>
+<!DOCTYPE html>
+<section id="skills">
+    <h1 class="title">スキル一覧</h1>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <style>
+        
+            #title-bar {
+            position: absolute;
+            top: -100vh; /* 最初は画面外に隠れるように */
+            left: 0;
+            width: 100%;
+            height: 100vh; /* タイトルバーが画面全体の高さを占める */
+            background-color: rgba(0, 0, 0, 0.8); /* 半透明の背景 */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 40px;
+            transition: top 0.3s ease-in-out; /* アニメーションを追加 */
+        }
+        </style>
+    <section class="skills-section">
+    <h1 class="skills-title">スキル</h1>
+    <div class="skills-container">
+        <div class="skill-card">
+        <img src="static\image\html-css-logo.jpg" alt="HTML & CSS" class="skill-icon">
+        <h2>HTML & CSS</h2>
+        <p>本ポートフォリオの作成に使用しました。</p>
+        </div>
+        <div class="skill-card">
+        <img src="static\image\python.png" alt="Python" class="skill-icon">
+        <h2>Python</h2>
+        <p>学校での授業で学び，discordのbotを作成したりしました。</p>
+        </div>
+        <div class="skill-card">
+        <img src="static\image\arduino.png" alt="C++" class="skill-icon">
+        <h2>C++</h2>
+        <p>Arduinoを使用した実習などで使用しています。</p>
+        </div>
+        <div class="skill-card">
+        <img src="static\image\Office-logo-min.jpg" alt="Microsoft Office" class="skill-icon">
+        <h2>Officeソフト</h2>
+        <p>Word、Excel、PowerPointを授業やイベントで使用しています。</p>
+        </div>
+        <!-- 他のスキルカードも同様に追加 -->
+    </div>
+    </section>
+    </body>
+</section>
+<body>
+    <div id="title-bar">{{.Title}}
+        <nav>
+            <ul>
+                <!--<li><a href="/index">index</a></li>-->
+                <li><a href="/about-me">About me</a></li>
+                <li><a href="/history">History</a></li>
+                <li><a href="/products">Product</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        // タイトルバーの要素を取得
+        const titleBar = document.getElementById("title-bar");
+    
+        // ウィンドウの高さを取得してカーソル位置を判定
+        window.addEventListener("mousemove", function(e) {
+            const windowHeight = window.innerHeight; // 画面の高さを取得
+            const cursorY = e.clientY; // カーソルのY座標を取得
+    
+            if (cursorY <= 100) { 
+                // カーソルが画面上部100px以内の場合
+                titleBar.style.top = "0"; // タイトルバーを表示
+            } else if (cursorY >= windowHeight - 100) { 
+                // カーソルが画面下部100px以内の場合
+                titleBar.style.top = "-1000px"; // タイトルバーを隠す
+            }
+        });
+    </script>
+    <head>
+        <style>
+            .skills-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ccc;
+    display: inline-block;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.skill-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    max-width: auto;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.skill-card h2 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+img {
+    max-width: 100%; /* 最大幅を100%に設定 */
+    height: auto; /* 高さを自動調整 */
+    border: 2px solid #ccc; /* 枠線の追加 */
+    border-radius: 8px; /* 角を丸くする */
+    display: block; /* ブロック要素化 */
+    margin: 0 auto; /* 中央揃え */
+}
+
+/* 動画のスタイル */
+video {
+    max-width: 100%; /* 最大幅を100%に設定 */
+    height: auto; /* 高さを自動調整 */
+    border: 2px solid #ccc; /* 枠線の追加 */
+    border-radius: 8px; /* 角を丸くする */
+    display: block; /* ブロック要素化 */
+    margin: 0 auto; /* 中央揃え */
+}
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+        </style>
+    </head>
+</body>
+</html>
