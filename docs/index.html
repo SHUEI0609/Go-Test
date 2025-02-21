@@ -24,6 +24,7 @@
             position: relative;
             width: 100%;
             height: 300px;
+            background-image: url('Thelaat.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -32,7 +33,6 @@
             color: white;
             font-size: 40px;
             text-align: center;
-            background-image: url('Thelaat.png');
         }
 
         header::before {
@@ -42,12 +42,20 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); 
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
+        /* ヘッダー内のテキストに背景画像を設定 */
         header h1 {
             position: relative;
             z-index: 1;
+            background-image: url('Thelaat.png'); /* 背景画像を設定 */
+            background-size: cover; /* 画像をカバーするように調整 */
+            background-position: center; /* 画像を中央に配置 */
+            padding: 20px; /* テキストの周りに余白を追加 */
+            border-radius: 10px; /* 角を丸くする */
+            background-color: rgba(255, 255, 255, 0.3); /* 半透明の背景色 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 影を追加 */
         }
 
         /* タイトルバーのスタイル */
@@ -173,6 +181,11 @@
             margin-bottom: 40px;
         }
 
+        .project-details {
+            display: none; /* 初期状態で非表示 */
+            margin-top: 10px;
+        }
+
         .project img, .project video {
             max-width: 100%;
             height: auto;
@@ -217,6 +230,21 @@
         .slider-controls button:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
+        /* Show Moreボタンのスタイル */
+        .show-more-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .show-more-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -245,7 +273,7 @@
         <p>誕生日<br>2007年6月9日　17歳</p>
         <p>大阪公立大学工業高等専門学校 2年知能情報コース所属</p>
         <p>部活: 現代音楽部</p>
-        <p>趣味<br>・エレキベース<br>音楽<br>・FPSゲーム</p>
+        <p>趣味<br>・エレキベース<br>・音楽<br>・FPSゲーム</p>
     </section>
 
     <!-- 自己紹介セクション -->
@@ -303,74 +331,82 @@
         <h1>Products</h1>
         <div class="project">
             <h3>プロジェクト2: ゲーム作成「2024年8月」</h3>
-            <p>2年生のプログラミングの授業の課題にてPythonを使ったテキサスポーカーのゲームを作成しました．
-                <a href="https://github.com/SHUEI0609/portfolio/blob/main/%E8%AA%B2%E9%A1%8C04_15_KS.ipynb">google colab</a><br>
-                <img src="static\image\poker.png">
-            </p>
+            <button class="show-more-btn" onclick="toggleDetails('project1')">Show More</button>
+            <div id="project1" class="project-details">
+                <p>2年生のプログラミングの授業の課題にてPythonを使ったテキサスポーカーのゲームを作成しました．
+                    <a href="https://github.com/SHUEI0609/portfolio/blob/main/%E8%AA%B2%E9%A1%8C04_15_KS.ipynb">google colab</a><br>
+                    <img src="static\image\poker.png">
+                </p>
+            </div>
         </div>
         <div class="project">
             <h3>プロジェクト1: Discord.pyを使用したBOTの作成「2024年11月」</h3>
-            <p>文化祭の展示にて，班でスマートロックを作成しました．私はdiscordのbotを用いてスマートロック本体に信号を伝えるプログラムを作成しました．</p>
-            <img src="image\discord-door.png" alt="bot" width="400" height="300">
-            <h1>動画の再生</h1>
-            <video width="440" height="260" autoplay loop muted>
-                <source src="image\IMG_2207.mov" type="video/mp4">
-            </video>
+            <button class="show-more-btn" onclick="toggleDetails('project2')">Show More</button>
+            <div id="project2" class="project-details">
+                <p>文化祭の展示にて，班でスマートロックを作成しました．私はdiscordのbotを用いてスマートロック本体に信号を伝えるプログラムを作成しました．</p>
+                <img src="image\discord-door.png" alt="bot" width="400" height="300">
+                <h1>動画の再生</h1>
+                <video width="440" height="260" autoplay loop muted>
+                    <source src="image\IMG_2207.mov" type="video/mp4">
+                </video>
+            </div>
         </div>
         <div class="project">
             <h3>プロジェクト3: ランダムフレーズ作成ソフトの作成「2025年1月」</h3>
-            <p>pythonを使用して，バッキングギター，リードギター，ベースそれぞれのフレーズをランダムで4小節生成するプログラムを作成しました．</p>
-            <a href="https://github.com/SHUEI0609/music-system">githubリポジトリ</a><br>
+            <button class="show-more-btn" onclick="toggleDetails('project3')">Show More</button>
+            <div id="project3" class="project-details">
+                <p>pythonを使用して，バッキングギター，リードギター，ベースそれぞれのフレーズをランダムで4小節生成するプログラムを作成しました．</p>
+                <a href="https://github.com/SHUEI0609/music-system">githubリポジトリ</a><br>
 
-            <!-- バッキングギターのスライドショー -->
-            <div class="photo-gallery" id="backing-gallery">
-                <div class="photo-pair">
-                    <img src="image\backing.png" alt="バッキングギターのボタンを押した結果" width="300" height="250">
-                    <img src="image\backing2.png" alt="バッキングギターのボタンを押した結果" width="300" height="250">
-                    <img src="image\backing3.png" alt="バッキングギターのボタンを押した結果" width="300" height="250">
-                    <img src="image\backing4.png" alt="バッキングギターのボタンを押した結果" width="300" height="250">
+                <!-- バッキングギターのスライドショー -->
+                <div class="photo-gallery" id="backing-gallery">
+                    <div class="photo-pair">
+                        <img src="image\backing.png" alt="バッキングギターのボタンを押した結果" width="300" height="250">
+                        <img src="image\backing2.png" alt="バッキングギターのボタンを押した結果" width="300" height="250">
+                        <img src="image\backing3.png" alt="バッキングギターのボタンを押した結果" width="300" height="250">
+                        <img src="image\backing4.png" alt="バッキングギターのボタンを押した結果" width="300" height="250">
+                    </div>
                 </div>
-            </div>
-            <div class="slider-controls">
-                <button onclick="prevSlide('backing-gallery')">前へ</button>
-                <button onclick="nextSlide('backing-gallery')">次へ</button>
-            </div>
-
-            <p>バッキングギターのボタンを押すと，bpm,コード進行，コードの構成音，リズムが出力されます．リズムが["四分音符","八分音符","四分音符","八分音符"]の場合，一つ目に出力されたコードを四分音符のリズムで
-                一小節弾き続け，二つ目に出力されたコードを八分音符のリズムで弾き続けます．</p>
-
-            <!-- リードギターのスライドショー -->
-            <div class="photo-gallery" id="lead-gallery">
-                <div class="photo-pair">
-                    <img src="image\lead.png" alt="リードギターのボタンを押した結果" width="500" height="400">
-                    <img src="image\lead2.png" alt="リードギターのボタンを押した結果" width="500" height="400">
-                    <img src="image\lead3.png" alt="リードギターのボタンを押した結果" width="500" height="400">
-                    <img src="image\lead4.png" alt="リードギターのボタンを押した結果" width="500" height="400">
+                <div class="slider-controls">
+                    <button onclick="prevSlide('backing-gallery')">前へ</button>
+                    <button onclick="nextSlide('backing-gallery')">次へ</button>
                 </div>
-            </div>
-            <div class="slider-controls">
-                <button onclick="prevSlide('lead-gallery')">前へ</button>
-                <button onclick="nextSlide('lead-gallery')">次へ</button>
-            </div>
 
-            <p>リードギターのボタンを押すと，bpm,リズム,音程が出力されます．リズムが1の場合は全音符，2の場合は半音符，４の場合は四分音符，8の場合は八分音符,16の場合は16分音符となっています．
-                リズムとメロディは右から順に対応しており，一番右のリズムが4でメロディがD#であれば四分音符の長さでD#弾くということです．</p>
+                <p>バッキングギターのボタンを押すと，bpm,コード進行，コードの構成音，リズムが出力されます．リズムが["四分音符","八分音符","四分音符","八分音符"]の場合，一つ目に出力されたコードを四分音符のリズムで
+                    一小節弾き続け，二つ目に出力されたコードを八分音符のリズムで弾き続けます．</p>
 
-            <!-- ベースのスライドショー -->
-            <div class="photo-gallery" id="bass-gallery">
-                <div class="photo-pair">
-                    <img src="image\bass.png" alt="ベースのボタンを押した結果" width="300" height="250">
-                    <img src="image\bass2.png" alt="ベースのボタンを押した結果" width="300" height="250">
-                    <img src="image\bass3.png" alt="ベースのボタンを押した結果" width="300" height="250">
-                    <img src="image\bass4.png" alt="ベースのボタンを押した結果" width="300" height="250">
+                <!-- リードギターのスライドショー -->
+                <div class="photo-gallery" id="lead-gallery">
+                    <div class="photo-pair">
+                        <img src="image\lead.png" alt="リードギターのボタンを押した結果" width="500" height="400">
+                        <img src="image\lead2.png" alt="リードギターのボタンを押した結果" width="500" height="400">
+                        <img src="image\lead3.png" alt="リードギターのボタンを押した結果" width="500" height="400">
+                        <img src="image\lead4.png" alt="リードギターのボタンを押した結果" width="500" height="400">
+                    </div>
                 </div>
-            </div>
-            <div class="slider-controls">
-                <button onclick="prevSlide('bass-gallery')">前へ</button>
-                <button onclick="nextSlide('bass-gallery')">次へ</button>
-            </div>
+                <div class="slider-controls">
+                    <button onclick="prevSlide('lead-gallery')">前へ</button>
+                    <button onclick="nextSlide('lead-gallery')">次へ</button>
+                </div>
 
-            <p>ベースのボタンを押すと，コード進行とベースライン，リズムが出力されます．基本は四分音符で出力されたベースラインを弾きますが，コード進行を出力することでアレンジを加えることも可能にしています</p>
+                <p>リードギターのボタンを押すと，bpm,リズム,音程が出力されます．リズムが1の場合は全音符，2の場合は半音符，４の場合は四分音符，8の場合は八分音符,16の場合は16分音符となっています．
+                    リズムとメロディは右から順に対応しており，一番右のリズムが4でメロディがD#であれば四分音符の長さでD#弾くということです．</p>
+
+                <!-- ベースのスライドショー -->
+                <div class="photo-gallery" id="bass-gallery">
+                    <div class="photo-pair">
+                        <img src="image\bass.png" alt="ベースのボタンを押した結果" width="300" height="250">
+                        <img src="image\bass2.png" alt="ベースのボタンを押した結果" width="300" height="250">
+                        <img src="image\bass3.png" alt="ベースのボタンを押した結果" width="300" height="250">
+                        <img src="image\bass4.png" alt="ベースのボタンを押した結果" width="300" height="250">
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button onclick="prevSlide('bass-gallery')">前へ</button>
+                    <button onclick="nextSlide('bass-gallery')">次へ</button>
+                </div>
+                <p>ベースのボタンを押すと，コード進行とベースライン，リズムが出力されます．基本は四分音符で出力されたベースラインを弾きますが，コード進行を出力することでアレンジを加えることも可能にしています</p>
+            </div>
         </div>
     </section>
 
@@ -409,6 +445,15 @@
             const lastPair = gallery.querySelector(".photo-pair:last-child");
             gallery.insertBefore(lastPair, gallery.firstChild); // 最後の要素を最初に移動
         }
+
+        function toggleDetails(projectId) {
+            var details = document.getElementById(projectId);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block"; // 表示
+        } else {
+            details.style.display = "none"; // 非表示
+        }
+    }
     </script>
 </body>
 </html>
